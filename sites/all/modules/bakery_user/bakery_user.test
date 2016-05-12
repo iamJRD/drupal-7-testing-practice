@@ -20,15 +20,16 @@ class BakeryUserTestCase extends DrupalWebTestCase {
   }
 
   public function testBakeryUserCreate() {
+    // ARRANGE
     $edit = array();
     $edit['title'] = 'Hi there!';
     $edit['body[und][0][value]'] = 'Welcome to Cameron\'s Bakery';
-    $this->drupalGet('welcome');
-    $this->assertText(t('Welcome to Cameron\'s Bakery'));
-  }
 
-  public function runningOnTestbot() {
-    return TRUE;
+    // ACT
+    $this->drupalGet('welcome');
+
+    // ASSERT
+    $this->assertText(t('Welcome to Cameron\'s Bakery'));
   }
 
 }

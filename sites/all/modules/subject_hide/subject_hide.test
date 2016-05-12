@@ -1,0 +1,23 @@
+<?php
+
+class SubjectHideTestCase extends DrupalWebTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Comment Subject Hide Test',
+      'description' => 'Ensures that the subject field on the article comment form is hidden from the user.',
+      'group' => 'Custom Tests',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp('subject_hide');
+  }
+
+  public function testSubjectHideCreate() {
+    $edit = array();
+    $edit['']
+  }
+
+
+}

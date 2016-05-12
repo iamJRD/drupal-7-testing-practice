@@ -18,12 +18,13 @@ class SubjectHideTestCase extends DrupalWebTestCase {
   }
 
   public function testSubjectHideCreate() {
+    // ARRANGE
     $edit = array();
     $edit['title'] = $this->randomName(8);
     $edit['body[und][0][value]'] = $this->randomName(20);
-
+    // ACT
     $this->drupalPost('node/add/article', $edit, t('Save'));
-
+    // ASSERT
     $this->assertNoText(t('Subject'), t('The subject field is hidden.'));
   }
 
